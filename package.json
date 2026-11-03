@@ -1,0 +1,10 @@
+{
+  "name": "fathimahashim-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "MongoDB-powered EJS portfolio for Fathima Hashim",
+  "main": "server.js",
+  "scripts": {"start": "node server.js", "dev": "node --watch server.js", "seed": "node scripts/seed.js"},
+  "engines": {"node": ">=18"},
+  "dependencies": {"dotenv": "^16.4.7", "ejs": "^3.1.10", "express": "^5.1.0", "mongoose": "^8.12.1"}
+}

@@ -1,0 +1,41 @@
+<%- include('partials/header', { title, portfolio }) %>
+<section class="about">
+  <div class="about-content">
+    <p class="section-title">ABOUT ME</p>
+    <h1>I'm <%= portfolio.profile.name %></h1>
+    <% portfolio.profile.about.forEach(paragraph => { %><p><%= paragraph %></p><% }) %>
+  </div>
+  <div class="education">
+    <h2>Education</h2>
+    <% portfolio.education.forEach(item => { %>
+      <div class="education-box"><h3><%= item.title %></h3><p><%= item.institution %></p></div>
+    <% }) %>
+  </div>
+</section>
+<% portfolio.skillGroups.forEach(group => { %>
+<section class="skills">
+  <h2><%= group.heading %></h2>
+  <div class="skill-container">
+    <% group.items.forEach(item => { %><div class="skill-box"><h3><%= item.title %></h3><p><%= item.description %></p></div><% }) %>
+  </div>
+</section>
+<% }) %>
+<section class="skills">
+  <h2>Areas of Interest</h2>
+  <div class="skill-container">
+    <% portfolio.interests.forEach(item => { %><div class="skill-box"><h3><%= item.title %></h3><p><%= item.description %></p></div><% }) %>
+  </div>
+</section>
+<section class="projects">
+  <h2>Internship Experience</h2>
+  <div class="project-container">
+    <% portfolio.internship.forEach(item => { %><div class="project-card"><h3><%= item.title %></h3><p><%= item.description %></p><% if (item.technology) { %><p><strong>Technology:</strong> <%= item.technology %></p><% } %></div><% }) %>
+  </div>
+</section>
+<section class="projects">
+  <h2>My Projects</h2>
+  <div class="project-container">
+    <% portfolio.projects.forEach(item => { %><div class="project-card"><h3><%= item.title %></h3><p><%= item.description %></p><% if (item.technology) { %><p><strong>Technology:</strong> <%= item.technology %></p><% } %><% if (item.url) { %><p><a href="<%= item.url %>" target="_blank" rel="noopener noreferrer">View Project</a></p><% } %></div><% }) %>
+  </div>
+</section>
+<%- include('partials/footer', { portfolio }) %>

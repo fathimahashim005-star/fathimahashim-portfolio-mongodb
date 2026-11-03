@@ -1,0 +1,12 @@
+<%- include('partials/header', { title, portfolio }) %>
+<section class="home">
+  <div class="home-content">
+    <p class="welcome"><%= portfolio.profile.welcome %></p>
+    <h1>Hi, I'm <span><%= portfolio.profile.name %></span></h1>
+    <h3><%= portfolio.profile.role %></h3>
+    <p><%= portfolio.profile.intro %></p>
+    <a href="/about" class="btn">Know More</a>
+    <a href="/contact" class="btn second-btn">Contact Me</a>
+  </div>
+</section>
+<%- include('partials/footer', { portfolio }) %>

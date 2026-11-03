@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="<%= portfolio.profile.intro %>">
+  <title><%= title %> | <%= portfolio.profile.name %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <h2><%= portfolio.profile.name %></h2>
+    <ul>
+      <li><a href="/" class="<%= title === 'Home' ? 'active' : '' %>">Home</a></li>
+      <li><a href="/about" class="<%= title === 'About' ? 'active' : '' %>">About</a></li>
+      <li><a href="/contact" class="<%= title === 'Contact' ? 'active' : '' %>">Contact</a></li>
+    </ul>
+  </nav>
+</header>

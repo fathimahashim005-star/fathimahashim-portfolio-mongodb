@@ -1,0 +1,25 @@
+<%- include('partials/header', { title, portfolio }) %>
+<section class="contact">
+  <div class="contact-intro">
+    <p class="section-title">CONTACT ME</p>
+    <h1>Let's Connect</h1>
+    <p><%= portfolio.contact.intro %></p>
+  </div>
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="contact-box"><h3>Email</h3><p><a href="mailto:<%= portfolio.contact.email %>"><%= portfolio.contact.email %></a></p></div>
+      <div class="contact-box"><h3>Phone</h3><p><%= portfolio.contact.phone %></p></div>
+      <div class="contact-box"><h3>Location</h3><p><%= portfolio.contact.location %></p></div>
+    </div>
+    <form action="/contact" method="POST">
+      <% if (success) { %><p role="status">Thank you! Your message has been sent.</p><% } %>
+      <% if (error) { %><p role="alert"><%= error %></p><% } %>
+      <input type="text" name="name" placeholder="Your Name" maxlength="100" required>
+      <input type="email" name="email" placeholder="Your Email" maxlength="254" required>
+      <input type="text" name="subject" placeholder="Subject" maxlength="150">
+      <textarea name="message" rows="6" placeholder="Your Message" maxlength="5000" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+<%- include('partials/footer', { portfolio }) %>
